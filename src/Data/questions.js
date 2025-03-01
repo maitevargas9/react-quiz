@@ -1,37 +1,44 @@
 export default [
   {
     id: "Q1",
-    question: "Welche ist die Hauptstadt von Spanien?",
-    answers: ["Madrid", "Bilbao", "Barcelona", "Santander"]
+    question: "What is the capital of Spain?",
+    answers: ["Madrid", "Bilbao", "Barcelona", "Santander"],
+    correct: "Madrid"
   },
   {
     id: "Q2",
-    question: "Welche ist die Hauptstadt von Italien?",
-    answers: ["Rom", "Mailand", "Florenz", "Arezzo"]
+    question: "What is the capital of Italy?",
+    answers: ["Rome", "Milan", "Florence", "Venice"],
+    correct: "Rome"
   },
   {
     id: "Q3",
-    question: "Welche ist die Hauptstadt von Griechenland?",
-    answers: ["Athen", "Olympia", "Monemvasia", "Kifisia"]
+    question: "What is the capital of Greece?",
+    answers: ["Athens", "Thessaloniki", "Patras", "Piraeus"],
+    correct: "Athens"
   },
   {
     id: "Q4",
-    question: "Welche ist die Hauptstadt von Gross Britanien?",
-    answers: ["London", "Canterbury", "Oxford", "Glasgow"]
+    question: "What is the capital of United Kingdom?",
+    answers: ["London", "Canterbury", "Oxford", "Glasgow"],
+    correct: "London"
   },
   {
     id: "Q5",
-    question: "Welche ist die Hauptstadt von Iceland?",
-    answers: ["Reykjavik", "Kópavogur", "Hafnarfjörður", "Keflavík"]
+    question: "What is the capital of Iceland?",
+    answers: ["Reykjavík", "Kópavogur", "Akureyri", "Selfoss"],
+    correct: "Reykjavík"
   },
   {
     id: "Q6",
-    question: "Welche ist die Hauptstadt von Schweden?",
-    answers: ["Stockholm", "Göteborg", "Malmö", "Uppsala"]
+    question: "What is the capital of Sweden?",
+    answers: ["Stockholm", "Göteborg", "Malmö", "Uppsala"],
+    correct: "Stockholm"
   },
   {
     id: "Q7",
-    question: "Welche ist die Hauptstadt von Deutschland?",
-    answers: ["Berlin", "Bonn", "Dusseldorf", "Munchen"]
+    question: "What is the capital of Germany?",
+    answers: ["Berlin", "Aachen", "Cologne", "Munich"],
+    correct: "Berlin"
   }
 ];
