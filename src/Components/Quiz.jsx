@@ -3,4 +3,13 @@ import questions from "../Data/questions.js";
 import Question from "./Question";
 import Summary from "./Summary";
 
-export default function Quiz() {}
+export default function Quiz() {
+  const gameover = false;
+
+  return (
+    <div>
+      <Question />
+      {gameover && <Summary />}
+    </div>
+  );
+}
