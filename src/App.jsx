@@ -1,8 +1,13 @@
 import Header from "./Components/Header";
-import "./App.css";
+import Quiz from "./Components/Quiz";
 
 function App() {
-  return <Header />;
+  return (
+    <div>
+      <Header />
+      <Quiz />
+    </div>
+  );
 }
 
 export default App;
