@@ -4,12 +4,18 @@ import Question from "./Question";
 import Summary from "./Summary";
 
 export default function Quiz() {
-  const gameover = false;
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+
+  const handleAnswerSelected = index => {
+    if (currentQuestionIndex < questions.length - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+    }
+  };
 
   return (
     <div>
       <Question />
-      {gameover && <Summary />}
+      <Summary />
     </div>
   );
 }
