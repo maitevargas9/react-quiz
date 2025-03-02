@@ -1,21 +1,20 @@
 import { useState, useEffect } from "react";
-import questions from "../Data/questions.js";
 import QuestionTimer from "./QuestionTimer";
 
-export default function Question() {
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+export default function Question({ question, onAnswerSelected }) {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
 
   useEffect(
     () => {
       setSelectedAnswer(null);
     },
-    [currentQuestionIndex]
+    [question]
   );
 
   const handleAnswerClick = answerIndex => {
     if (selectedAnswer == null) {
       setSelectedAnswer(answerIndex);
+      onAnswerSelected(answerIndex);
       setTimeout(() => {
         nextQuestion();
       }, 1000);
@@ -26,7 +25,7 @@ export default function Question() {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
-      alert("Quiz beendet!");
+      setGameOver(true);
     }
   };
 
@@ -34,10 +33,10 @@ export default function Question() {
     <div>
       <QuestionTimer timeLimit={10} onTimeOut={nextQuestion} />
       <h2>
-        {questions[currentQuestionIndex].question}
+        {question.question}
       </h2>
       <ul>
-        {questions[currentQuestionIndex].answers.map((answer, answerIndex) =>
+        {question.answers.map((answer, answerIndex) =>
           <li key={answerIndex}>
             <button
               onClick={() => handleAnswerClick(answerIndex)}
