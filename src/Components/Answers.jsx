@@ -1,1 +1,3 @@
-export default function Question() {}
+const Answer = () => {};
+
+export default Answer;

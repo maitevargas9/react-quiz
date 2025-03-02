@@ -3,7 +3,7 @@ import questions from "../Data/questions.js";
 import Question from "./Question";
 import Summary from "./Summary";
 
-export default function Quiz() {
+const Quiz = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState([]);
   const [gameOver, setGameOver] = useState(false);
@@ -29,7 +29,9 @@ export default function Quiz() {
           question={questions[currentQuestionIndex]}
           onAnswerSelected={handleAnswerSelected}
         />}
-      {gameOver && <Summary />}
+      {gameOver && <Summary answers={answers} questions={questions} />}
     </div>
   );
-}
+};
+
+export default Quiz;

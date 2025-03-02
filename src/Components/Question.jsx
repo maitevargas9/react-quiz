@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import QuestionTimer from "./QuestionTimer";
 
-export default function Question({ question, onAnswerSelected }) {
+const Question = ({ question, onAnswerSelected }) => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
 
   useEffect(
@@ -11,13 +11,10 @@ export default function Question({ question, onAnswerSelected }) {
     [question]
   );
 
-  const handleAnswerClick = answerIndex => {
+  const handleAnswerClick = index => {
     if (selectedAnswer == null) {
-      setSelectedAnswer(answerIndex);
-      onAnswerSelected(answerIndex);
-      setTimeout(() => {
-        nextQuestion();
-      }, 1000);
+      setSelectedAnswer(index);
+      onAnswerSelected(index);
     }
   };
 
@@ -36,10 +33,10 @@ export default function Question({ question, onAnswerSelected }) {
         {question.question}
       </h2>
       <ul>
-        {question.answers.map((answer, answerIndex) =>
-          <li key={answerIndex}>
+        {question.answers.map((answer, index) =>
+          <li key={index}>
             <button
-              onClick={() => handleAnswerClick(answerIndex)}
+              onClick={() => handleAnswerClick(index)}
               disabled={selectedAnswer !== null}
             >
               {answer}
@@ -49,4 +46,6 @@ export default function Question({ question, onAnswerSelected }) {
       </ul>
     </div>
   );
-}
+};
+
+export default Question;
