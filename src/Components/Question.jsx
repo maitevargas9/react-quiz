@@ -32,10 +32,10 @@ export default function Question() {
 
   return (
     <div>
+      <QuestionTimer timeLimit={10} onTimeOut={nextQuestion} />
       <h2>
         {questions[currentQuestionIndex].question}
       </h2>
-      <QuestionTimer timeLimit={10} onTimeOut={nextQuestion} />
       <ul>
         {questions[currentQuestionIndex].answers.map((answer, answerIndex) =>
           <li key={answerIndex}>
