@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import QuestionTimer from "./QuestionTimer";
 
-const Question = ({ question, onAnswerSelected }) => {
+const Question = ({ question, onAnswerSelected, nextQuestion }) => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
 
   useEffect(
@@ -15,14 +15,7 @@ const Question = ({ question, onAnswerSelected }) => {
     if (selectedAnswer == null) {
       setSelectedAnswer(index);
       onAnswerSelected(index);
-    }
-  };
-
-  const nextQuestion = () => {
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-    } else {
-      setGameOver(true);
+      setTimeout(nextQuestion, 1000);
     }
   };
 

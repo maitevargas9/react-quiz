@@ -15,8 +15,12 @@ const Quiz = () => {
       return updatedAnswers;
     });
 
+    nextQuestion();
+  };
+
+  const nextQuestion = () => {
     if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setCurrentQuestionIndex(prevIndex => prevIndex + 1);
     } else {
       setGameOver(true);
     }
@@ -28,6 +32,7 @@ const Quiz = () => {
         <Question
           question={questions[currentQuestionIndex]}
           onAnswerSelected={handleAnswerSelected}
+          nextQuestion={nextQuestion}
         />}
       {gameOver && <Summary answers={answers} questions={questions} />}
     </div>
